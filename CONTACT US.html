@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeriSync · Contact Us</title>
+    <link rel="Stylesheet" href="SERISYNC/CONTACT US.css" />
+    <link rel="Stylesheet" href="SERISYNC/ALBY.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script>
+    // Activate Search Button
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-box input");
+      const searchButton = document.querySelector(".search-box button");
+
+      // Function that runs when user searches
+      function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+
+        if (query === "") {
+          alert("Please type something to search!");
+          searchInput.focus();
+          return;
+        }
+
+        // Simple keyword matching → redirects to the correct lesson
+        if (
+          query.includes("intro") ||
+          query.includes("introduction") ||
+          query.includes("sequence") ||
+          query.includes("series")
+        ) {
+          window.location.href = "LESSON 1.html";
+        } else if (
+          query.includes("saving") ||
+          query.includes("investment") ||
+          query.includes("finance") ||
+          query.includes("money")
+        ) {
+          window.location.href = "LESSON 2.html";
+        } else if (query.includes("population") || query.includes("growth")) {
+          window.location.href = "LESSON 3.html";
+        } else if (
+          query.includes("depreciation") ||
+          query.includes("depreciate") ||
+          query.includes("value")
+        ) {
+          window.location.href = "LESSON 4.html";
+        } else if (query.includes("quiz") || query.includes("test")) {
+          window.location.href = "QUIZZES.html";
+        } else if (query.includes("about") || query.includes("team")) {
+          window.location.href = "ABOUT US.html";
+        } else if (query.includes("contact")) {
+          window.location.href = "CONTACT US.html";
+        } else {
+          // If no match found
+          alert(
+            'No results found for: "' +
+              searchInput.value +
+              '"\n\nTry searching for: sequences, savings, population, depreciation, quiz...',
+          );
+          searchInput.focus();
+        }
+      }
+
+      // When the search button is clicked
+      searchButton.addEventListener("click", performSearch);
+
+      // When the user presses Enter key inside the input
+      searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          performSearch();
+        }
+      });
+    });
+  </script>
+  <body>
+    <!-- ========== NAVIGATION BAR (identical to original) ========== -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <div class="logo-text">Seri<span>Sync</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="dropdown">
+          <a href="LESSON PAGE.html">Lessons ▼</a>
+          <div class="dropdown-content">
+            <a href="LESSON 1.html"
+              >Introduction to Real Life Application to Sequence and Series</a
+            >
+            <a href="LESSON 2.html">Saving and Investment Plans</a>
+            <a href="LESSON 3.html">Population Growth</a>
+            <a href="LESSON 4.html">Depreciation</a>
+          </div>
+        </li>
+
+        <li><a href="QUIZZES.html">Quizzes</a></li>
+        <li><a href="ABOUT US.html">About Us</a></li>
+        <li>
+          <a
+            href="CONTACT US.html"
+            style="color: #7fc1e0; border-bottom-color: #7fc1e0"
+            >Contacts</a
+          >
+        </li>
+      </ul>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search lessons..." />
+        <button type="button">🔍</button>
+      </div>
+    </nav>
+
+    <!-- ========== CONTACT US PAGE ========== -->
+    <div class="contact-wrapper">
+      <div class="contact-grid">
+        <!-- LEFT: Form -->
+        <div class="form-section">
+          <h2>Get in touch</h2>
+          <p>
+            We’d love to hear from you — drop us a message and we’ll respond as
+            soon as possible.
+          </p>
+
+          <form class="contact-form" id="contactForm">
+            <label for="name">Full name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="you@example.com"
+              required
+            />
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="How can we help?" />
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+
+            <button type="submit" class="send-btn">Send message ✉️</button>
+          </form>
+
+          <!-- MESSAGE RESPONSE PROMPT -->
+          <div id="response-prompt">
+            ✅ Thank you! Your message has been received. We'll get back to you
+            shortly.
+          </div>
+        </div>
+
+        <!-- RIGHT: Map + details -->
+        <div class="map-section">
+          <h3>📍 Winneba, Ghana</h3>
+          <p class="address">
+            University of Education, Winneba · Central Region
+          </p>
+
+          <!-- Google Maps embed – Winneba -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31720.69744629689!2d-0.6347494855748532!3d5.345275026039642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdfb7b7b7b7b7b7%3A0x7b7b7b7b7b7b7b7b!2sWinneba%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1712345678901!5m2!1sen!2sgh"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+
+          <div class="contact-details">
+            <div class="detail-item">
+              <span class="emoji-icon">📞</span> <span>+233 200812669</span>
+            </div>
+            <div class="detail-item">
+              <span class="emoji-icon">✉️</span>
+              <span>hello@serisync.edu.gh</span>
+            </div>
+            <div class="detail-item">
+              <span class="emoji-icon">🕘</span>
+              <span>Mon–Fri · 8:00 AM – 5:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FOOTER (identical) ========== -->
+    <footer>
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" title="Facebook">FB</a>
+        <a href="https://twitter.com" target="_blank" title="X / Twitter">X</a>
+        <a href="https://instagram.com" target="_blank" title="Instagram">IG</a>
+        <a href="https://youtube.com" target="_blank" title="YouTube">YT</a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn">IN</a>
+      </div>
+
+      <p class="footer-text">
+        <strong>2026</strong> SeriSync. All rights reserved.<br />
+        Sequences &amp; Series made practical.
+      </p>
+    </footer>
+
+    <!-- ========== SCRIPT: MESSAGE RESPONSE PROMPT ========== -->
+    <script>
+      (function () {
+        const form = document.getElementById("contactForm");
+        const prompt = document.getElementById("response-prompt");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault(); // prevent actual page reload
+
+          // Basic validation: ensure name, email, message are filled
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const message = document.getElementById("message").value.trim();
+
+          if (!name || !email || !message) {
+            prompt.style.display = "block";
+            prompt.style.background = "#fde8e8";
+            prompt.style.color = "#a13d3d";
+            prompt.style.borderColor = "#f5c2c2";
+            prompt.textContent =
+              "⚠️ Please fill in all required fields (Name, Email, Message).";
+            return;
+          }
+
+          // Show success prompt
+          prompt.style.display = "block";
+          prompt.style.background = "#e4f0e9";
+          prompt.style.color = "#1a5a3a";
+          prompt.style.borderColor = "#b6d7c4";
+          prompt.textContent =
+            "✅ Thank you! Your message has been received. We'll get back to you shortly.";
+
+          // Optionally reset form fields
+          form.reset();
+
+          // Auto-hide after 6 seconds (optional)
+          setTimeout(() => {
+            prompt.classList.remove("show");
+            prompt.style.display = "none";
+          }, 6000);
+        });
+
+        // If user clicks on the prompt, hide it manually
+        prompt.addEventListener("click", function () {
+          this.style.display = "none";
+        });
+      })();
+    </script>
+  </body>
+</html>

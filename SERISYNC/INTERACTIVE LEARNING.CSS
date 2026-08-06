@@ -1,0 +1,53 @@
+/* ========== INTERACTIVE LEARNING PAGE ========== */
+.embed-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 24px;
+}
+
+.embed-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.embed-box iframe {
+  display: block;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.embed-note {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.resource-card {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-left: 4px solid #38bdf8;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.resource-card p {
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.resource-card a {
+  color: #0284c7;
+  font-weight: 600;
+}
+
+.resource-card a:hover {
+  text-decoration: underline;
+}

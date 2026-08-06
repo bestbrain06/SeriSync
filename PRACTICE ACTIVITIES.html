@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Activities – SeriSync</title>
+    <link rel="stylesheet" href="SERISYNC/PRACTICE ACTIVITIES.css" />
+    <link rel="stylesheet" href="SERISYNC/ALBY.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script>
+    // Activate Search Button
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-box input");
+      const searchButton = document.querySelector(".search-box button");
+
+      // Function that runs when user searches
+      function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+
+        if (query === "") {
+          alert("Please type something to search!");
+          searchInput.focus();
+          return;
+        }
+
+        // Simple keyword matching → redirects to the correct lesson
+        if (
+          query.includes("intro") ||
+          query.includes("introduction") ||
+          query.includes("sequence") ||
+          query.includes("series")
+        ) {
+          window.location.href = "LESSON 1.html";
+        } else if (
+          query.includes("saving") ||
+          query.includes("investment") ||
+          query.includes("finance") ||
+          query.includes("money")
+        ) {
+          window.location.href = "LESSON 2.html";
+        } else if (query.includes("population") || query.includes("growth")) {
+          window.location.href = "LESSON 3.html";
+        } else if (
+          query.includes("depreciation") ||
+          query.includes("depreciate") ||
+          query.includes("value")
+        ) {
+          window.location.href = "LESSON 4.html";
+        } else if (query.includes("quiz") || query.includes("test")) {
+          window.location.href = "QUIZZES.html";
+        } else if (query.includes("about") || query.includes("team")) {
+          window.location.href = "ABOUT US.html";
+        } else if (query.includes("contact")) {
+          window.location.href = "CONTACT US.html";
+        } else {
+          // If no match found
+          alert(
+            'No results found for: "' +
+              searchInput.value +
+              '"\n\nTry searching for: sequences, savings, population, depreciation, quiz...',
+          );
+          searchInput.focus();
+        }
+      }
+
+      // When the search button is clicked
+      searchButton.addEventListener("click", performSearch);
+
+      // When the user presses Enter key inside the input
+      searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          performSearch();
+        }
+      });
+    });
+  </script>
+  <body>
+    <!-- ========== NAVIGATION BAR ========== -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <div class="logo-text">Seri<span>Sync</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Menu ▾</a>
+          <div class="dropdown-content">
+            <div class="dropdown-section-title">Lessons</div>
+            <a href="LESSON 1.html"
+              >1. Introduction of Real Life Application of Sequence and
+              Series</a
+            >
+            <a href="LESSON 2.html">2. Saving and Investment Plans</a>
+            <a href="LESSON 3.html">3. Population Growth</a>
+            <a href="LESSON 4.html">4. Depreciation</a>
+            <div class="dropdown-divider"></div>
+            <a href="QUIZZES.html">Quizzes</a>
+            <a href="ABOUT US.html">About Us</a>
+            <a href="CONTACT US.html">Contact Us</a>
+            <a href="PRACTICE ACTIVITIES.html" class="active"
+              >Practice Activities</a
+            >
+            <a href="INTERACTIVE LEARNING.html">Interactive Learning</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search lessons..." />
+        <button type="button" aria-label="Search">🔍</button>
+      </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="practice-hero">
+      <div class="hero-content">
+        <h1>Practice <span>Activities</span></h1>
+        <p>
+          Strengthen your understanding with worked examples, practice
+          questions, and guided hints for Saving & Investment Plans, Population
+          Growth, and Depreciation.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== LESSON 1: SAVING & INVESTMENT ========== -->
+    <section class="practice-section">
+      <div class="lesson-block">
+        <div class="lesson-header">
+          <div class="lesson-number">1</div>
+          <h2>Saving and Investment Plans</h2>
+        </div>
+        <div class="lesson-body">
+          <!-- Worked Example -->
+          <div class="worked-example">
+            <h3>Worked Example</h3>
+            <p>
+              Maria deposits <strong>$200</strong> at the beginning of each year
+              into a savings account that pays
+              <strong>5% interest per year</strong>, compounded annually. How
+              much will she have after <strong>4 years</strong>?
+            </p>
+            <p>This is a geometric series. The amounts after interest are:</p>
+            <p class="formula">
+              200(1.05)<sup>4</sup> + 200(1.05)<sup>3</sup> + 200(1.05)<sup
+                >2</sup
+              >
+              + 200(1.05)<sup>1</sup>
+            </p>
+            <p>
+              Using the sum of a geometric series
+              <em>S<sub>n</sub> = a(r<sup>n</sup> − 1)/(r − 1)</em> with first
+              term a = 200 × 1.05 and r = 1.05:
+            </p>
+            <ol>
+              <li>a = 200 × 1.05 = 210</li>
+              <li>r = 1.05, n = 4</li>
+              <li>S<sub>4</sub> = 210 × (1.05<sup>4</sup> − 1) / (1.05 − 1)</li>
+              <li>1.05<sup>4</sup> ≈ 1.21550625</li>
+              <li>
+                S<sub>4</sub> = 210 × (0.21550625) / 0.05 ≈ 210 × 4.310125 ≈
+                <strong>$905.13</strong>
+              </li>
+            </ol>
+            <p class="answer">
+              Answer: Maria will have approximately
+              <strong>$905.13</strong> after 4 years.
+            </p>
+          </div>
+
+          <h3 class="questions-title">Practice Questions</h3>
+
+          <!-- Q1 -->
+          <div class="question-card">
+            <span class="question-number">Question 1</span>
+            <p class="question-text">
+              James saves $150 at the end of every month. The bank offers a
+              simple interest rate of 6% per year (0.5% per month). Assuming an
+              arithmetic sequence of interest earned, how much interest will he
+              have earned after 8 months if interest is calculated only on the
+              principal each month?
+            </p>
+            <details class="hint-box">
+              <summary>Show Hint</summary>
+              <div class="hint-content">
+                Treat the monthly interest as an arithmetic sequence. First term
+                a = 150 × 0.005 = 0.75, common difference d = 0.75. Use S<sub
+                  >n</sub
+                >
+                = n/2 × [2a + (n−1)d].
+              </div>
+            </details>
+            <details class="answer-box">
+              <summary>Show Answer & Solution</summary>
+              <div class="answer-content">
+                <p>Interest per month on $150 = 150 × 0.005 = $0.75.</p>
+                <p>
+                  After 8 months the total interest forms an arithmetic series
+                  with a = 0.75, d = 0.75, n = 8.
+                </p>
+                <ol class="steps">
+                  <li>
+                    S<sub>8</sub> = 8/2 × [2(0.75) + (7)(0.75)] = 4 × [1.5 +
+                    5.25] = 4 × 6.75 = 27
+                  </li>
+                </ol>
+                <p class="final">
+                  Total interest earned = <strong>$27.00</strong>
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Q2 -->
+          <div class="question-card">
+            <span class="question-number">Question 2</span>
+            <p class="question-text">
+              A person invests $500 at the beginning of each year in an account
+              that earns 4% compound interest per year. How much will the
+              investment be worth after 5 years?
+            </p>
+            <details class="hint-box">
+              <summary>Show Hint</summary>
+              <div class="hint-content">
+                This is a geometric series. First term a = 500 × 1.04, common
+                ratio r = 1.04, n = 5. Use S<sub>n</sub> = a(r<sup>n</sup> −
+                1)/(r − 1).
+              </div>
+            </details>
+            <details class="answer-box">
+              <summary>Show Answer & Solution</summary>
+              <div class="answer-content">
+                <p>a = 500 × 1.04 = 520, r = 1.04, n = 5</p>
+                <ol class="steps">
+                  <li>1.04<sup>5</sup> ≈ 1.2166529</li>
+                  <li>
+                    S<sub>5</sub> = 520 × (1.2166529 − 1) / 0.04 = 520 ×
+                    0.2166529 / 0.04
+                  </li>
+                  <li>S<sub>5</sub> ≈ 520 × 5.4163225 ≈ 2816.49</li>
+                </ol>
+                <p class="final">
+                  Value after 5 years ≈ <strong>$2,816.49</strong>
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LESSON 2: POPULATION GROWTH ========== -->
+    <section class="practice-section">
+      <div class="lesson-block">
+        <div class="lesson-header">
+          <div class="lesson-number">2</div>
+          <h2>Population Growth</h2>
+        </div>
+        <div class="lesson-body">
+          <!-- Worked Example -->
+          <div class="worked-example">
+            <h3>Worked Example</h3>
+            <p>
+              A town has a population of <strong>12,000</strong>. It grows at a
+              rate of <strong>3% per year</strong>. What will the population be
+              after <strong>6 years</strong>? (Assume geometric growth.)
+            </p>
+            <p class="formula">
+              P<sub>n</sub> = P<sub>0</sub> × (1 + r)<sup>n</sup>
+            </p>
+            <ol>
+              <li>P<sub>0</sub> = 12 000, r = 0.03, n = 6</li>
+              <li>P<sub>6</sub> = 12 000 × (1.03)<sup>6</sup></li>
+              <li>1.03<sup>6</sup> ≈ 1.194052</li>
+              <li>
+                P<sub>6</sub> ≈ 12 000 × 1.194052 ≈ <strong>14,328.63</strong>
+              </li>
+            </ol>
+            <p class="answer">
+              Answer: The population will be approximately
+              <strong>14,329</strong> people after 6 years.
+            </p>
+          </div>
+
+          <h3 class="questions-title">Practice Questions</h3>
+
+          <!-- Q3 -->
+          <div class="question-card">
+            <span class="question-number">Question 3</span>
+            <p class="question-text">
+              A bacteria culture starts with 800 bacteria and doubles every 3
+              hours. How many bacteria will there be after 15 hours?
+            </p>
+            <details class="hint-box">
+              <summary>Show Hint</summary>
+              <div class="hint-content">
+                This is a geometric sequence. First term a = 800, common ratio r
+                = 2. Number of terms: 15 ÷ 3 = 5 growth periods, so n = 6 terms
+                (including the start). Use a<sub>n</sub> = a × r<sup>n−1</sup>.
+              </div>
+            </details>
+            <details class="answer-box">
+              <summary>Show Answer & Solution</summary>
+              <div class="answer-content">
+                <p>
+                  After 15 hours there have been 5 doublings → 6 terms in the
+                  sequence.
+                </p>
+                <ol class="steps">
+                  <li>
+                    a<sub>6</sub> = 800 × 2<sup>5</sup> = 800 × 32 = 25 600
+                  </li>
+                </ol>
+                <p class="final">
+                  Number of bacteria = <strong>25,600</strong>
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Q4 -->
+          <div class="question-card">
+            <span class="question-number">Question 4</span>
+            <p class="question-text">
+              The population of a city was 50,000 in 2020. It increases by 2.5%
+              each year. Estimate the population in 2028.
+            </p>
+            <details class="hint-box">
+              <summary>Show Hint</summary>
+              <div class="hint-content">
+                Geometric growth: P<sub>n</sub> = 50 000 × (1.025)<sup>n</sup>
+                where n = 8 (from 2020 to 2028).
+              </div>
+            </details>
+            <details class="answer-box">
+              <summary>Show Answer & Solution</summary>
+              <div class="answer-content">
+                <p>n = 8 years, r = 1.025</p>
+                <ol class="steps">
+                  <li>1.025<sup>8</sup> ≈ 1.2184</li>
+                  <li>P<sub>8</sub> = 50 000 × 1.2184 ≈ 60 920</li>
+                </ol>
+                <p class="final">
+                  Estimated population in 2028 ≈ <strong>60,920</strong>
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LESSON 3: DEPRECIATION ========== -->
+    <section class="practice-section">
+      <div class="lesson-block">
+        <div class="lesson-header">
+          <div class="lesson-number">3</div>
+          <h2>Depreciation</h2>
+        </div>
+        <div class="lesson-body">
+          <!-- Worked Example -->
+          <div class="worked-example">
+            <h3>Worked Example</h3>
+            <p>
+              A machine costs <strong>$25,000</strong> and depreciates by
+              <strong>15% of its value each year</strong> (reducing-balance
+              method). What is its value after <strong>4 years</strong>?
+            </p>
+            <p class="formula">
+              V<sub>n</sub> = V<sub>0</sub> × (1 − r)<sup>n</sup>
+            </p>
+            <ol>
+              <li>V<sub>0</sub> = 25 000, r = 0.15, n = 4</li>
+              <li>V<sub>4</sub> = 25 000 × (0.85)<sup>4</sup></li>
+              <li>0.85<sup>4</sup> ≈ 0.52200625</li>
+              <li>
+                V<sub>4</sub> ≈ 25 000 × 0.52200625 ≈
+                <strong>$13,050.16</strong>
+              </li>
+            </ol>
+            <p class="answer">
+              Answer: The machine is worth approximately
+              <strong>$13,050</strong> after 4 years.
+            </p>
+          </div>
+
+          <h3 class="questions-title">Practice Questions</h3>
+
+          <!-- Q5 -->
+          <div class="question-card">
+            <span class="question-number">Question 5</span>
+            <p class="question-text">
+              A car bought for $18,000 depreciates by 12% of its value each
+              year. Find its value after 5 years.
+            </p>
+            <details class="hint-box">
+              <summary>Show Hint</summary>
+              <div class="hint-content">
+                Use V<sub>n</sub> = 18 000 × (0.88)<sup>5</sup>. Calculate
+                0.88<sup>5</sup> step by step or with a calculator.
+              </div>
+            </details>
+            <details class="answer-box">
+              <summary>Show Answer & Solution</summary>
+              <div class="answer-content">
+                <p>V<sub>5</sub> = 18 000 × (0.88)<sup>5</sup></p>
+                <ol class="steps">
+                  <li>0.88<sup>2</sup> = 0.7744</li>
+                  <li>0.88<sup>4</sup> = 0.7744<sup>2</sup> ≈ 0.599695</li>
+                  <li>0.88<sup>5</sup> ≈ 0.599695 × 0.88 ≈ 0.527732</li>
+                  <li>V<sub>5</sub> ≈ 18 000 × 0.527732 ≈ 9 499.18</li>
+                </ol>
+                <p class="final">
+                  Value after 5 years ≈ <strong>$9,499</strong>
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Q6 -->
+          <div class="question-card">
+            <span class="question-number">Question 6</span>
+            <p class="question-text">
+              An office computer costs $4,500 and loses 20% of its value each
+              year. After how many full years will its value first fall below
+              $1,500?
+            </p>
+            <details class="hint-box">
+              <summary>Show Hint</summary>
+              <div class="hint-content">
+                Solve 4500 × (0.8)<sup>n</sup> &lt; 1500. Simplify to (0.8)<sup
+                  >n</sup
+                >
+                &lt; 1/3 ≈ 0.3333. Try successive values of n or take
+                logarithms.
+              </div>
+            </details>
+            <details class="answer-box">
+              <summary>Show Answer & Solution</summary>
+              <div class="answer-content">
+                <p>
+                  4500 × (0.8)<sup>n</sup> &lt; 1500 → (0.8)<sup>n</sup> &lt;
+                  1500/4500 = 1/3 ≈ 0.3333
+                </p>
+                <ol class="steps">
+                  <li>n = 1: 0.80</li>
+                  <li>n = 2: 0.64</li>
+                  <li>n = 3: 0.512</li>
+                  <li>n = 4: 0.4096</li>
+                  <li>n = 5: 0.32768 &lt; 0.3333</li>
+                </ol>
+                <p class="final">
+                  The value first falls below $1,500 after
+                  <strong>5 years</strong>.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="practice-note">
+      Need a refresher? Go back to the <a href="index.html">Home page</a> or
+      open the relevant lesson from the Menu.
+    </p>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <div class="footer-social">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener"
+          title="Facebook"
+          >FB</a
+        >
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener"
+          title="X / Twitter"
+          >X</a
+        >
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener"
+          title="Instagram"
+          >IG</a
+        >
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          rel="noopener"
+          title="YouTube"
+          >YT</a
+        >
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener"
+          title="LinkedIn"
+          >IN</a
+        >
+      </div>
+      <p class="footer-text">
+        <strong>© 2026</strong> SeriSync. All rights reserved.<br />
+        Sequences & Series made practical.
+      </p>
+    </footer>
+  </body>
+</html>

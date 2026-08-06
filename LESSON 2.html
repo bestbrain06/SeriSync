@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeriSync | Saving and Investment Plans</title>
+    <link rel="Stylesheet" href="SERISYNC/LESSON 2.css" />
+    <link rel="Stylesheet" href="SERISYNC/ALBY.css" />
+  </head>
+  <script>
+    // Activate Search Button
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-box input");
+      const searchButton = document.querySelector(".search-box button");
+
+      // Function that runs when user searches
+      function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+
+        if (query === "") {
+          alert("Please type something to search!");
+          searchInput.focus();
+          return;
+        }
+
+        // Simple keyword matching → redirects to the correct lesson
+        if (
+          query.includes("intro") ||
+          query.includes("introduction") ||
+          query.includes("sequence") ||
+          query.includes("series")
+        ) {
+          window.location.href = "LESSON 1.html";
+        } else if (
+          query.includes("saving") ||
+          query.includes("investment") ||
+          query.includes("finance") ||
+          query.includes("money")
+        ) {
+          window.location.href = "LESSON 2.html";
+        } else if (query.includes("population") || query.includes("growth")) {
+          window.location.href = "LESSON 3.html";
+        } else if (
+          query.includes("depreciation") ||
+          query.includes("depreciate") ||
+          query.includes("value")
+        ) {
+          window.location.href = "LESSON 4.html";
+        } else if (query.includes("quiz") || query.includes("test")) {
+          window.location.href = "QUIZZES.html";
+        } else if (query.includes("about") || query.includes("team")) {
+          window.location.href = "ABOUT US.html";
+        } else if (query.includes("contact")) {
+          window.location.href = "CONTACT US.html";
+        } else {
+          // If no match found
+          alert(
+            'No results found for: "' +
+              searchInput.value +
+              '"\n\nTry searching for: sequences, savings, population, depreciation, quiz...',
+          );
+          searchInput.focus();
+        }
+      }
+
+      // When the search button is clicked
+      searchButton.addEventListener("click", performSearch);
+
+      // When the user presses Enter key inside the input
+      searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          performSearch();
+        }
+      });
+    });
+  </script>
+  <body>
+    <!-- ========== FIXED NAVBAR ========== -->
+    <div id="navbar">
+      <a href="index.html" class="logo">
+        <span class="math-icon">&sum;</span>
+        Seri<span>Sync</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button">&#9776;</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="lessons.html" class="active">Lessons &#9662;</a>
+          <div class="dropdown-content">
+            <a href="LESSON 1.html">Sequences &amp; Series</a>
+            <a href="LESSON 2.html">Saving &amp; Investment</a>
+            <a href="LESSON 3.html">Population Growth</a>
+            <a href="LESSON 4.html">Depreciation</a>
+          </div>
+        </li>
+        <li><a href="quizzes.html">Quizzes</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search lessons..." />
+        <button class="search-btn" type="button" title="Search">
+          &#128269;
+        </button>
+      </div>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-symbols">
+        <span>&sum;</span>
+        <span>&int;</span>
+        <span>&pi;</span>
+        <span>&infin;</span>
+        <span>&radic;x</span>
+        <span>a<sub>n</sub></span>
+      </div>
+      <div class="hero-content">
+        <h1>Explore Mathematics Lessons with SeriSync</h1>
+        <p>
+          SeriSync provides interactive mathematics lessons that connect
+          classroom concepts with real-life applications &mdash; making
+          sequences, series, growth models and financial maths practical and
+          inspiring.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== INDIVIDUAL LESSON DISPLAY AREA ========== -->
+    <section class="section" id="lesson-area">
+      <div class="lesson-display">
+        <h2>Saving and Investment Plans</h2>
+        <p class="lesson-meta">
+          Category: Financial Mathematics &nbsp;&bull;&nbsp; Level: Intermediate
+          &nbsp;&bull;&nbsp; Duration: &asymp; 30 min
+        </p>
+
+        <!-- Overview -->
+        <div class="lesson-block">
+          <h3>Lesson Overview</h3>
+          <p>
+            Compound interest and regular savings plans are perfect applications
+            of <strong>geometric sequences</strong> and series. When money grows
+            at a fixed percentage rate, each new amount is obtained by
+            multiplying the previous amount by a constant factor. Understanding
+            these models helps you plan for the future, compare investment
+            options and make informed financial decisions.
+          </p>
+        </div>
+
+        <!-- Learning Objectives -->
+        <div class="lesson-block">
+          <h3>Learning Objectives</h3>
+          <ul>
+            <li>Model compound interest using geometric sequences.</li>
+            <li>
+              Calculate the future value of a single investment and of regular
+              deposits (annuities).
+            </li>
+            <li>Compare different savings and investment strategies.</li>
+            <li>
+              Solve real-life problems involving interest rates and time
+              periods.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mathematical Examples -->
+        <div class="lesson-block">
+          <h3>Mathematical Examples</h3>
+
+          <!-- Example 1 -->
+          <div class="math-box">
+            <strong>Example 1 &ndash; Compound Interest (Single Deposit)</strong
+            ><br /><br />
+            You invest $5&nbsp;000 in an account that pays 6% interest per year,
+            compounded annually.<br />
+            How much will the investment be worth after 5 years?<br /><br />
+            This is a geometric sequence with:<br />
+            &nbsp;&nbsp;first term &nbsp;<em>P</em> = 5000<br />
+            &nbsp;&nbsp;common ratio &nbsp;<em>r</em> = 1.06<br /><br />
+            Future value formula:<br />
+            <div class="formula">
+              <em>A</em> = <em>P</em>(1 + <em>r</em>)<sup>n</sup>
+            </div>
+            <div class="formula">
+              <em>A</em> = 5000 &times; (1.06)<sup>5</sup> &asymp; 5000 &times;
+              1.3382 = $6&nbsp;691.13
+            </div>
+          </div>
+
+          <!-- Example 2 -->
+          <div class="math-box">
+            <strong>Example 2 &ndash; Regular Monthly Savings (Annuity)</strong
+            ><br /><br />
+            You deposit $200 at the end of every month into an account that
+            earns 0.5% interest per month.<br />
+            How much will you have after 2 years (24 deposits)?<br /><br />
+            This is the sum of a geometric series:<br />
+            <div class="formula">
+              <em>S</em><sub>n</sub> = <em>R</em> &times;
+              <sup>(1 + <em>r</em>)<sup>n</sup> &minus; 1</sup>&frasl;<sub
+                ><em>r</em></sub
+              >
+            </div>
+            where <em>R</em> = 200, <em>r</em> = 0.005, <em>n</em> = 24.<br /><br />
+            <div class="formula">
+              <em>S</em><sub>24</sub> = 200 &times;
+              <sup>(1.005)<sup>24</sup> &minus; 1</sup>&frasl;<sub>0.005</sub>
+              &asymp; 200 &times; 25.478 = $5&nbsp;095.60
+            </div>
+          </div>
+
+          <!-- Example 3 -->
+          <div class="math-box">
+            <strong>Example 3 &ndash; Finding the Interest Earned</strong
+            ><br /><br />
+            In Example 2 you deposited a total of 24 &times; $200 =
+            $4&nbsp;800.<br />
+            The final amount was approximately $5&nbsp;095.60.<br /><br />
+            Interest earned:<br />
+            <div class="formula">
+              Interest = Final Amount &minus; Total Deposits = 5095.60 &minus;
+              4800 = $295.60
+            </div>
+          </div>
+        </div>
+
+        <!-- Practice Activity -->
+        <div class="lesson-block">
+          <h3>Practice Activity</h3>
+          <div class="practice-box">
+            <h4>Your Turn</h4>
+            <p>
+              1. You invest $8&nbsp;000 at 5% per year compounded annually.<br />
+              &nbsp;&nbsp;&bull; How much will it be worth after 6 years?<br />
+              &nbsp;&nbsp;&bull; How much interest will you have earned?<br /><br />
+
+              2. You save $150 at the end of every month in an account that pays
+              0.4% interest per month.<br />
+              &nbsp;&nbsp;&bull; How much will you have after 3 years (36
+              deposits)?<br />
+              &nbsp;&nbsp;&bull; How much of that amount is interest?<br /><br />
+
+              3. Compare two plans:<br />
+              &nbsp;&nbsp;&bull; Plan A: $5&nbsp;000 invested once at 6% p.a.
+              for 5 years.<br />
+              &nbsp;&nbsp;&bull; Plan B: $100 deposited every month at 0.5% per
+              month for 5 years.<br />
+              Which plan gives the larger final amount? Show your calculations.
+            </p>
+          </div>
+          <a href="quizzes.html" class="btn-quiz">Take Related Quiz &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Lesson Navigation -->
+      <div class="lesson-nav">
+        <a href="LESSON 1.html" class="btn-nav btn-prev"
+          >&larr; Previous Lesson</a
+        >
+        <a href="LESSON PAGE.html" class="btn-nav btn-back">Back to Lessons</a>
+        <a href="LESSON 3.html" class="btn-nav btn-next">Next Lesson &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ========== CONTINUE LEARNING ========== -->
+    <section class="section">
+      <h2 class="section-title">Continue Learning</h2>
+      <p class="section-subtitle">
+        Keep building your skills with these recommended resources.
+      </p>
+      <div class="continue-grid">
+        <a href="QUIZZES.html" class="continue-card">
+          <span class="continue-icon">&#128221;</span>
+          <h4>Quizzes</h4>
+          <p>
+            Test your understanding with interactive quizzes on sequences,
+            series and applications.
+          </p>
+        </a>
+        <a href="MORE LESSONS.html" class="continue-card">
+          <span class="continue-icon">&#128218;</span>
+          <h4>More Lessons</h4>
+          <p>
+            Browse additional topics in algebra, calculus foundations and
+            applied mathematics.
+          </p>
+        </a>
+        <a href="PRACTICE ACTIVITIES.html" class="continue-card">
+          <span class="continue-icon">&#9999;</span>
+          <h4>Practice Activities</h4>
+          <p>
+            Hands-on exercises and real-life problem sets to reinforce every
+            concept you learn.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>Seri<span>Sync</span></h3>
+          <p>
+            Making Mathematics Practical, Simple, and Inspiring. Connecting
+            classroom theory with the real world.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="LESSON PAGE.html">Lessons</a></li>
+            <li><a href="QUIZZES.html">Quizzes</a></li>
+            <li><a href="ABOUT US.html">About Us</a></li>
+            <li><a href="CONTACT US.html">Contacts</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect With Us</h4>
+          <div class="social-icons">
+            <a href="https://facebook.com" title="Facebook" target="_blank"
+              >f</a
+            >
+            <a href="https://instagram.com" title="Instagram" target="_blank"
+              >&#128247;</a
+            >
+            <a href="https://x.com" title="X (Twitter)" target="_blank"
+              >&#120143;</a
+            >
+            <a href="https://linkedin.com" title="LinkedIn" target="_blank"
+              >in</a
+            >
+            <a href="https://youtube.com" title="YouTube" target="_blank"
+              >&#9654;</a
+            >
+            <a href="https://wa.me/" title="WhatsApp" target="_blank"
+              >&#128172;</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SeriSync. All Rights Reserved.</p>
+        <p class="slogan">
+          Making Mathematics Practical, Simple, and Inspiring.
+        </p>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      /* Mobile menu toggle - Dreamweaver 8 compatible */
+      document.getElementById("menuToggle").onclick = function () {
+        var nav = document.getElementById("navLinks");
+        if (nav.className.indexOf("open") === -1) {
+          nav.className = nav.className + " open";
+        } else {
+          nav.className = nav.className.replace(" open", "");
+        }
+      };
+    </script>
+  </body>
+</html>

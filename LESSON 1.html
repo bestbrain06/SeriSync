@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      SeriSync | Introduction to Real Life Applications of Sequence and Series
+    </title>
+    <link rel="Stylesheet" href="SERISYNC/LESSON 1.css" />
+    <link rel="Stylesheet" href="SERISYNC/ALBY.css" />
+  </head>
+  <script>
+    // Activate Search Button
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-box input");
+      const searchButton = document.querySelector(".search-box button");
+
+      // Function that runs when user searches
+      function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+
+        if (query === "") {
+          alert("Please type something to search!");
+          searchInput.focus();
+          return;
+        }
+
+        // Simple keyword matching → redirects to the correct lesson
+        if (
+          query.includes("intro") ||
+          query.includes("introduction") ||
+          query.includes("sequence") ||
+          query.includes("series")
+        ) {
+          window.location.href = "LESSON 1.html";
+        } else if (
+          query.includes("saving") ||
+          query.includes("investment") ||
+          query.includes("finance") ||
+          query.includes("money")
+        ) {
+          window.location.href = "LESSON 2.html";
+        } else if (query.includes("population") || query.includes("growth")) {
+          window.location.href = "LESSON 3.html";
+        } else if (
+          query.includes("depreciation") ||
+          query.includes("depreciate") ||
+          query.includes("value")
+        ) {
+          window.location.href = "LESSON 4.html";
+        } else if (query.includes("quiz") || query.includes("test")) {
+          window.location.href = "QUIZZES.html";
+        } else if (query.includes("about") || query.includes("team")) {
+          window.location.href = "ABOUT US.html";
+        } else if (query.includes("contact")) {
+          window.location.href = "CONTACT US.html";
+        } else {
+          // If no match found
+          alert(
+            'No results found for: "' +
+              searchInput.value +
+              '"\n\nTry searching for: sequences, savings, population, depreciation, quiz...',
+          );
+          searchInput.focus();
+        }
+      }
+
+      // When the search button is clicked
+      searchButton.addEventListener("click", performSearch);
+
+      // When the user presses Enter key inside the input
+      searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          performSearch();
+        }
+      });
+    });
+  </script>
+  <body>
+    <!-- ========== FIXED NAVBAR ========== -->
+    <div id="navbar">
+      <a href="index.html" class="logo">
+        <span class="math-icon">&sum;</span>
+        Seri<span>Sync</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button">&#9776;</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="lesson.html" class="active">Lessons &#9662;</a>
+          <div class="dropdown-content">
+            <a href="LESSON 1.html">Sequences &amp; Series</a>
+            <a href="LESSON 2.html">Saving &amp; Investment</a>
+            <a href="LESSON 3.html">Population Growth</a>
+            <a href="LESSON 4.html">Depreciation</a>
+          </div>
+        </li>
+        <li><a href="quizzes.html">Quizzes</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+      </ul>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search lessons..." />
+        <button class="search-btn" type="button" title="Search">
+          &#128269;
+        </button>
+      </div>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-symbols">
+        <span>&sum;</span>
+        <span>&int;</span>
+        <span>&pi;</span>
+        <span>&infin;</span>
+        <span>&radic;x</span>
+        <span>a<sub>n</sub></span>
+      </div>
+      <div class="hero-content">
+        <h1>Explore Mathematics Lessons with SeriSync</h1>
+        <p>
+          SeriSync provides interactive mathematics lessons that connect
+          classroom concepts with real-life applications &mdash; making
+          sequences, series, growth models and financial maths practical and
+          inspiring.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== INDIVIDUAL LESSON DISPLAY AREA ========== -->
+    <section class="section" id="lesson-area">
+      <div class="lesson-display">
+        <h2>Introduction to Real Life Applications of Sequence and Series</h2>
+        <p class="lesson-meta">
+          Category: Sequences &amp; Series &nbsp;&bull;&nbsp; Level:
+          Intermediate &nbsp;&bull;&nbsp; Duration: &asymp; 25 min
+        </p>
+
+        <!-- Overview -->
+        <div class="lesson-block">
+          <h3>Lesson Overview</h3>
+          <p>
+            Sequences and series are mathematical patterns that appear
+            everywhere in daily life. An
+            <strong>arithmetic sequence</strong> increases or decreases by a
+            constant difference, while a
+            <strong>geometric sequence</strong> multiplies by a constant ratio.
+            Understanding these patterns helps us model theatre seating,
+            bouncing balls, savings plans, population growth and many other
+            real-world situations.
+          </p>
+        </div>
+
+        <!-- Learning Objectives -->
+        <div class="lesson-block">
+          <h3>Learning Objectives</h3>
+          <ul>
+            <li>Define arithmetic and geometric sequences and series.</li>
+            <li>
+              Identify real-life situations that follow sequence patterns.
+            </li>
+            <li>
+              Apply the general term and sum formulas to practical problems.
+            </li>
+            <li>Connect classroom concepts to finance, nature and design.</li>
+          </ul>
+        </div>
+
+        <!-- Mathematical Examples -->
+        <div class="lesson-block">
+          <h3>Mathematical Examples</h3>
+
+          <!-- Example 1 -->
+          <div class="math-box">
+            <strong
+              >Example 1 &ndash; Theatre Seating (Arithmetic Sequence)</strong
+            ><br /><br />
+            A theatre has 20 seats in the first row. Each following row has 4
+            more seats than the previous one.<br /><br />
+            This forms an arithmetic sequence with:<br />
+            &nbsp;&nbsp;first term &nbsp;<em>a</em> = 20<br />
+            &nbsp;&nbsp;common difference &nbsp;<em>d</em> = 4<br /><br />
+            General term:<br />
+            <div class="formula">
+              <em>a</em><sub>n</sub> = 20 + (n &minus; 1) &times; 4
+            </div>
+            Number of seats in the 10th row:<br />
+            <div class="formula">
+              <em>a</em><sub>10</sub> = 20 + (10 &minus; 1) &times; 4 = 20 + 36
+              = 56 seats
+            </div>
+          </div>
+
+          <!-- Example 2 -->
+          <div class="math-box">
+            <strong>Example 2 &ndash; Bouncing Ball (Geometric Sequence)</strong
+            ><br /><br />
+            A ball is dropped from a height of 16 m. Each bounce reaches
+            &frac34; of the previous height.<br /><br />
+            Heights form a geometric sequence: 16, 12, 9, 6.75, &hellip;<br />
+            &nbsp;&nbsp;first term &nbsp;<em>a</em> = 16<br />
+            &nbsp;&nbsp;common ratio &nbsp;<em>r</em> = &frac34;<br /><br />
+            General term:<br />
+            <div class="formula">
+              <em>a</em><sub>n</sub> = 16 &times; (&frac34;)<sup>n&minus;1</sup>
+            </div>
+            Height after the 4th bounce:<br />
+            <div class="formula">
+              <em>a</em><sub>5</sub> = 16 &times; (&frac34;)<sup>4</sup> = 16
+              &times; <sup>81</sup>&frasl;<sub>256</sub> = 5.0625 m
+            </div>
+          </div>
+
+          <!-- Example 3 -->
+          <div class="math-box">
+            <strong>Example 3 &ndash; Sum of an Arithmetic Series</strong
+            ><br /><br />
+            Find the total number of seats in the first 10 rows of the
+            theatre.<br /><br />
+            Sum of the first <em>n</em> terms of an arithmetic series:<br />
+            <div class="formula">
+              <em>S</em><sub>n</sub> = <sup>n</sup>&frasl;<sub>2</sub> [2<em
+                >a</em
+              >
+              + (n &minus; 1)<em>d</em>]
+            </div>
+            or<br />
+            <div class="formula">
+              <em>S</em><sub>n</sub> = <sup>n</sup>&frasl;<sub>2</sub> (<em
+                >a</em
+              >
+              + <em>l</em>)
+            </div>
+            where <em>l</em> is the last term.<br /><br />
+            Using the first formula:<br />
+            <div class="formula">
+              <em>S</em><sub>10</sub> = <sup>10</sup>&frasl;<sub>2</sub> [2
+              &times; 20 + (10 &minus; 1) &times; 4] = 5 [40 + 36] = 5 &times;
+              76 = 380 seats
+            </div>
+          </div>
+        </div>
+
+        <!-- Practice Activity -->
+        <div class="lesson-block">
+          <h3>Practice Activity</h3>
+          <div class="practice-box">
+            <h4>Your Turn</h4>
+            <p>
+              1. A stadium has 15 seats in the first row and each next row has 3
+              more seats.<br />
+              &nbsp;&nbsp;&bull; Write the general term <em>a</em
+              ><sub>n</sub>.<br />
+              &nbsp;&nbsp;&bull; How many seats are in the 12th row?<br />
+              &nbsp;&nbsp;&bull; Find the total number of seats in the first 12
+              rows.<br /><br />
+
+              2. A rubber ball is dropped from 10 m and rebounds to &frac23; of
+              its previous height each time.<br />
+              &nbsp;&nbsp;&bull; Write the first four heights as a geometric
+              sequence.<br />
+              &nbsp;&nbsp;&bull; Find the height after the 5th bounce using the
+              general term.<br /><br />
+
+              3. List two real-life situations that can be modelled by an
+              arithmetic sequence and two that can be modelled by a geometric
+              sequence. Explain your choices briefly.
+            </p>
+          </div>
+          <a href="quizzes.html" class="btn-quiz">Take Related Quiz &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Lesson Navigation -->
+      <div class="lesson-nav">
+        <a href="#" class="btn-nav btn-prev">&larr; Previous Lesson</a>
+        <a href="LESSON PAGE.html" class="btn-nav btn-back">Back to Lessons</a>
+        <a href="LESSON 2.html" class="btn-nav btn-next">Next Lesson &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ========== CONTINUE LEARNING ========== -->
+    <section class="section">
+      <h2 class="section-title">Continue Learning</h2>
+      <p class="section-subtitle">
+        Keep building your skills with these recommended resources.
+      </p>
+      <div class="continue-grid">
+        <a href="QUIZZES.html" class="continue-card">
+          <span class="continue-icon">&#128221;</span>
+          <h4>Quizzes</h4>
+          <p>
+            Test your understanding with interactive quizzes on sequences,
+            series and applications.
+          </p>
+        </a>
+        <a href="MORE LESSONS.html" class="continue-card">
+          <span class="continue-icon">&#128218;</span>
+          <h4>More Lessons</h4>
+          <p>
+            Browse additional topics in algebra, calculus foundations and
+            applied mathematics.
+          </p>
+        </a>
+        <a href="PRACTICE ACTIVITIES.html" class="continue-card">
+          <span class="continue-icon">&#9999;</span>
+          <h4>Practice Activities</h4>
+          <p>
+            Hands-on exercises and real-life problem sets to reinforce every
+            concept you learn.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>Seri<span>Sync</span></h3>
+          <p>
+            Making Mathematics Practical, Simple, and Inspiring. Connecting
+            classroom theory with the real world.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="LESSON.html">Lessons</a></li>
+            <li><a href="QUIZZES.html">Quizzes</a></li>
+            <li><a href="ABOUT US.html">About Us</a></li>
+            <li><a href="CONTACT US.html">Contacts</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect With Us</h4>
+          <div class="social-icons">
+            <a href="https://facebook.com" title="Facebook" target="_blank"
+              >f</a
+            >
+            <a href="https://instagram.com" title="Instagram" target="_blank"
+              >&#128247;</a
+            >
+            <a href="https://x.com" title="X (Twitter)" target="_blank"
+              >&#120143;</a
+            >
+            <a href="https://linkedin.com" title="LinkedIn" target="_blank"
+              >in</a
+            >
+            <a href="https://youtube.com" title="YouTube" target="_blank"
+              >&#9654;</a
+            >
+            <a href="https://wa.me/" title="WhatsApp" target="_blank"
+              >&#128172;</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SeriSync. All Rights Reserved.</p>
+        <p class="slogan">
+          Making Mathematics Practical, Simple, and Inspiring.
+        </p>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      /* Mobile menu toggle only - Dreamweaver 8 compatible */
+      document.getElementById("menuToggle").onclick = function () {
+        var nav = document.getElementById("navLinks");
+        if (nav.className.indexOf("open") === -1) {
+          nav.className = nav.className + " open";
+        } else {
+          nav.className = nav.className.replace(" open", "");
+        }
+      };
+    </script>
+  </body>
+</html>
