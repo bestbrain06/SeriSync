@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz 1 � Saving and Investment Plans</title>
+    <link rel="Stylesheet" href="SERISYNC/QUIZ 1.CSS" />
+    <link rel="Stylesheet" href="SERISYNC/ALBY.CSS" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- floating colourful mathematics elements -->
+    <div class="math-float">?</div>
+    <div class="math-float">?</div>
+    <div class="math-float">p</div>
+    <div class="math-float">v</div>
+    <div class="math-float">8</div>
+    <div class="math-float">?</div>
+    <div class="math-float">?</div>
+
+    <!-- ========== NAVIGATION BAR ========== -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <div class="logo-text">Seri<span>Sync</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="dropdown">
+          <a href="LESSON PAGE.html">Lessons </a>
+          <div class="dropdown-content">
+            <a href="LESSON 1.html"
+              >Introduction to Real Life Application to Sequence and Series</a
+            >
+            <a href="LESSON 2.html">Saving and Investment Plans</a>
+            <a href="LESSON 3.html">Population Growth</a>
+            <a href="LESSON 4.html">Depreciation</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="QUIZZES.html" style="border-bottom-color: #7fc1e0"
+            >Quizzes</a
+          >
+        </li>
+        <li><a href="ABOUT US.html">About Us</a></li>
+        <li><a href="CONTACT US.html">Contacts</a></li>
+      </ul>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search lessons..." />
+        <button type="button"></button>
+      </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="container">
+      <header>
+        <h1>Quiz 1: Saving and Investment Plans</h1>
+        <p>Select a difficulty level to begin</p>
+      </header>
+
+      <!-- Level Selection -->
+      <div id="levelSelect" class="level-select">
+        <div class="level-card beginner" onClick="startQuiz('beginner')">
+          <h3>Beginner</h3>
+          <p>6 questions 6 minutes</p>
+        </div>
+        <div
+          class="level-card intermediate"
+          onClick="startQuiz('intermediate')"
+        >
+          <h3>Intermediate</h3>
+          <p>6 questions 8 minutes</p>
+        </div>
+        <div class="level-card advanced" onClick="startQuiz('advanced')">
+          <h3>Advanced</h3>
+          <p>6 questions 10 minutes</p>
+        </div>
+      </div>
+
+      <!-- Quiz Area -->
+      <div id="quizArea" class="quiz-area">
+        <div class="quiz-header">
+          <div class="progress" id="progressText">Question 1 of 6</div>
+          <div class="timer" id="timer">06:00</div>
+        </div>
+
+        <div class="question-card">
+          <h2 id="questionText"></h2>
+          <div class="options" id="optionsContainer"></div>
+        </div>
+
+        <div class="nav-buttons">
+          <button class="btn-prev" id="prevBtn" onClick="prevQuestion()">
+            Previous
+          </button>
+          <button class="btn-next" id="nextBtn" onClick="nextQuestion()">
+            Next ?
+          </button>
+          <button
+            class="btn-submit hidden"
+            id="submitBtn"
+            onClick="submitQuiz()"
+          >
+            Submit Quiz
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Area -->
+      <div id="resultsArea" class="results-area">
+        <div class="score-box">
+          <div class="score" id="finalScore">0/6</div>
+          <div class="feedback" id="overallFeedback"></div>
+        </div>
+        <div id="reviewContainer"></div>
+        <button class="back-btn" onClick="location.reload()">
+          ? Back to Level Selection
+        </button>
+      </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" title="Facebook">FB</a>
+        <a href="https://twitter.com" target="_blank" title="X / Twitter">X</a>
+        <a href="https://instagram.com" target="_blank" title="Instagram">IG</a>
+        <a href="https://youtube.com" target="_blank" title="YouTube">YT</a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn">IN</a>
+      </div>
+
+      <p class="footer-text">
+        <strong>2026</strong> SeriSync. All rights reserved.<br />
+        Sequences &amp; Series made practical.
+      </p>
+    </footer>
+
+    <script src="search.js"></script>
+
+    <script>
+      // ========== QUIZ DATA ==========
+      const quizzes = {
+        beginner: {
+          timeLimit: 6 * 60, // 6 minutes
+          questions: [
+            {
+              q: "What is the primary purpose of an emergency fund?",
+              options: [
+                "To invest in high-risk stocks for quick profits",
+                "To cover unexpected expenses without going into debt",
+                "To save for a luxury vacation next year",
+                "To use as a down payment for a house",
+              ],
+              answer: 1,
+              explanation:
+                "An emergency fund is specifically designed to cover unexpected expenses like medical bills, car repairs, or job loss, preventing you from going into debt.",
+            },
+            {
+              q: "Which savings option typically offers the highest interest rate while keeping your money safe and accessible?",
+              options: [
+                "A regular checking account",
+                "A high-yield savings account",
+                "A piggy bank at home",
+                "A certificate of deposit (CD) with a penalty for early withdrawal",
+              ],
+              answer: 1,
+              explanation:
+                "High-yield savings accounts offer competitive interest rates while keeping your money liquid and accessible, unlike CDs which penalize early withdrawals.",
+            },
+            {
+              q: "What does the financial rule of thumb 'pay yourself first' mean?",
+              options: [
+                "Spend money on entertainment before paying bills",
+                "Automatically save a fixed percentage of income before spending on anything else",
+                "Only buy things you want, not what you need",
+                "Pay all your debts before saving anything",
+              ],
+              answer: 1,
+              explanation:
+                "Paying yourself first means prioritizing savings by automatically setting aside a portion of your income before you have a chance to spend it on other things.",
+            },
+            {
+              q: "What is the main advantage of a fixed deposit over a regular savings account?",
+              options: [
+                "You can withdraw money anytime without penalty",
+                "It offers a guaranteed higher interest rate for a fixed period",
+                "There are no fees or charges",
+                "Your money grows faster with compound interest daily",
+              ],
+              answer: 1,
+              explanation:
+                "Fixed deposits typically offer higher, guaranteed interest rates than regular savings accounts in exchange for keeping your money locked in for a specific period.",
+            },
+            {
+              q: "Which of the following is the first step in creating a successful personal budget?",
+              options: [
+                "Immediately cut all fun expenses",
+                "Track your income and all expenses for at least a month",
+                "Invest all extra money in stocks",
+                "Ask a friend how they budget",
+              ],
+              answer: 1,
+              explanation:
+                "Tracking your income and expenses is the foundation of budgeting. You can't effectively manage your money without knowing exactly where it's going.",
+            },
+            {
+              q: "What distinguishes saving from investing?",
+              options: [
+                "They are exactly the same thing",
+                "Saving is for short-term goals with low risk; investing is for long-term growth with higher risk",
+                "Investing is always safer than saving",
+                "Saving always provides higher returns than investing",
+              ],
+              answer: 1,
+              explanation:
+                "Saving focuses on preserving capital for short-term needs with minimal risk, while investing aims for higher long-term returns but accepts market volatility and risk.",
+            },
+          ],
+        },
+
+        intermediate: {
+          timeLimit: 8 * 60,
+          questions: [
+            {
+              q: "How does compound interest work to grow your savings over time?",
+              options: [
+                "Interest is earned only on the initial principal amount",
+                "Interest is earned on both the principal and the accumulated interest from previous periods",
+                "Interest decreases as your balance grows",
+                "The bank gives you a bonus for every deposit you make",
+              ],
+              answer: 1,
+              explanation:
+                "Compound interest is 'interest on interest.' Each period, you earn interest not just on your original deposit, but also on all the interest that has been added to your account.",
+            },
+            {
+              q: "What does the 'Rule of 72' help you calculate?",
+              options: [
+                "The exact amount of money you need to retire",
+                "How long it takes for an investment to double at a given annual rate of return",
+                "The total interest paid on a loan",
+                "The safest investment option",
+              ],
+              answer: 1,
+              explanation:
+                "The Rule of 72 is a quick way to estimate how many years it will take for an investment to double in value. You divide 72 by the annual interest rate (e.g., 72 � 8% = 9 years).",
+            },
+            {
+              q: "Why is diversification important when building an investment portfolio?",
+              options: [
+                "It guarantees you will make money every year",
+                "It spreads risk across different assets so poor performance in one area doesn't devastate your entire portfolio",
+                "It eliminates all investment risk completely",
+                "It's required by law for all investors",
+              ],
+              answer: 1,
+              explanation:
+                "Diversification is a risk management strategy that spreads investments across various asset classes, sectors, and regions to reduce the impact of any single investment's poor performance.",
+            },
+            {
+              q: "What is a Systematic Investment Plan (SIP) and why is it beneficial?",
+              options: [
+                "A one-time large investment in a single stock",
+                "Investing a fixed amount regularly (usually monthly) to build wealth through rupee-cost averaging",
+                "A government scheme that guarantees 20% returns",
+                "Withdrawing money from your savings account every month",
+              ],
+              answer: 1,
+              explanation:
+                "SIPs allow you to invest small amounts regularly, which helps build investment discipline and benefits from rupee-cost averaging�buying more units when prices are low and fewer when prices are high.",
+            },
+            {
+              q: "How does inflation impact the real value of your savings over time?",
+              options: [
+                "Inflation increases the purchasing power of your money",
+                "Inflation gradually reduces what your money can buy, making it essential to invest for growth",
+                "Inflation only affects salaries, not savings",
+                "Inflation has no effect on savings accounts",
+              ],
+              answer: 1,
+              explanation:
+                "Inflation erodes purchasing power. If your savings aren't growing at least at the inflation rate, you're effectively losing money in terms of what you can buy in the future.",
+            },
+            {
+              q: "What's the main risk-return relationship in investing?",
+              options: [
+                "Lower risk investments always give the highest returns",
+                "Higher potential returns generally come with higher risk",
+                "Risk and returns are completely unrelated",
+                "You can get high returns with zero risk if you know the right stocks",
+              ],
+              answer: 1,
+              explanation:
+                "This is the fundamental principle of investing: to earn higher returns, you must accept higher risk. Government bonds are low-risk with modest returns, while stocks can offer higher returns but with more volatility.",
+            },
+          ],
+        },
+
+        advanced: {
+          timeLimit: 10 * 60,
+          questions: [
+            {
+              q: "What is strategic asset allocation and how does it benefit long-term investors?",
+              options: [
+                "Constantly trading stocks to maximize short-term gains",
+                "Creating a target mix of different asset classes (e.g., stocks, bonds, real estate) based on your risk tolerance and investment goals",
+                "Investing all your money in the highest-performing asset class each year",
+                "Avoiding diversification to focus on one high-growth sector",
+              ],
+              answer: 1,
+              explanation:
+                "Strategic asset allocation is a disciplined approach that determines your long-term portfolio composition based on your financial goals, risk tolerance, and time horizon, helping you stay focused during market fluctuations.",
+            },
+            {
+              q: "How does rupee-cost averaging (dollar-cost averaging) help reduce investment risk?",
+              options: [
+                "It guarantees you'll never lose money in the stock market",
+                "By investing fixed amounts regularly, you automatically buy more units when prices are low and fewer when prices are high, reducing your average cost per unit",
+                "It allows you to invest only when the market is going up",
+                "It eliminates all market-related risks completely",
+              ],
+              answer: 1,
+              explanation:
+                "Rupee-cost averaging helps smooth out market volatility by spreading your purchases over time. This disciplined approach prevents you from investing all your money at market peaks.",
+            },
+            {
+              q: "What role does tax efficiency play in investment planning?",
+              options: [
+                "Taxes don't affect investment returns at all",
+                "Strategically choosing investments and accounts to minimize tax liability can significantly improve after-tax returns over time",
+                "You should avoid all investments that generate taxable income",
+                "Only wealthy people need to consider tax implications",
+              ],
+              answer: 1,
+              explanation:
+                "Tax-efficient investing involves using tax-advantaged accounts, holding investments long-term for lower capital gains rates, and choosing investments that align with your tax situation to maximize after-tax returns.",
+            },
+            {
+              q: "What is portfolio rebalancing and why is it important?",
+              options: [
+                "Selling all investments and starting fresh every year",
+                "Periodically adjusting your portfolio to bring it back to your target asset allocation percentages",
+                "Adding more money to your portfolio whenever the market is down",
+                "Changing your investment strategy based on daily market news",
+              ],
+              answer: 1,
+              explanation:
+                "Rebalancing helps maintain your desired risk level. When certain assets grow faster than others, your portfolio becomes more aggressive or conservative than intended, and rebalancing restores your original target mix.",
+            },
+            {
+              q: "What does the Sharpe ratio measure in investment analysis?",
+              options: [
+                "The total profit you'll make from an investment",
+                "Risk-adjusted returns�how much excess return you get for each unit of volatility or risk taken",
+                "The tax efficiency of an investment strategy",
+                "Only the dividend yield of a stock",
+              ],
+              answer: 1,
+              explanation:
+                "The Sharpe ratio compares an investment's returns to its volatility. A higher ratio indicates better risk-adjusted performance, helping investors evaluate whether higher returns are due to smart decisions or just higher risk-taking.",
+            },
+            {
+              q: "Which psychological bias most commonly causes investors to hold onto losing investments?",
+              options: [
+                "Overconfidence in their abilities",
+                "Loss aversion�the tendency to feel losses more intensely than gains, leading to holding losing positions hoping they'll recover",
+                "Following the crowd without analysis",
+                "Focusing only on recent performance",
+              ],
+              answer: 1,
+              explanation:
+                "Loss aversion, a key concept in behavioral finance, explains why investors often hold onto losing investments too long. The pain of realizing a loss is psychologically stronger than the pleasure of making gains, leading to poor decision-making.",
+            },
+          ],
+        },
+      };
+
+      // ========== STATE ==========
+      let currentLevel = null;
+      let currentQuestions = [];
+      let userAnswers = [];
+      let currentIndex = 0;
+      let timerInterval = null;
+      let timeLeft = 0;
+
+      // ========== FUNCTIONS ==========
+      function startQuiz(level) {
+        currentLevel = level;
+        currentQuestions = quizzes[level].questions;
+        userAnswers = new Array(currentQuestions.length).fill(null);
+        currentIndex = 0;
+        timeLeft = quizzes[level].timeLimit;
+
+        // Hide level selection, show quiz
+        document.getElementById("levelSelect").style.display = "none";
+        document.getElementById("quizArea").style.display = "block";
+        document.getElementById("resultsArea").style.display = "none";
+
+        // Start timer
+        startTimer();
+
+        // Load first question
+        loadQuestion();
+
+        // Update navigation buttons
+        updateButtons();
+      }
+
+      function startTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+
+        timerInterval = setInterval(() => {
+          timeLeft--;
+          updateTimerDisplay();
+
+          if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submitQuiz();
+          }
+        }, 1000);
+      }
+
+      function updateTimerDisplay() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        document.getElementById("timer").textContent =
+          `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+        // Add warning color when time is low
+        if (timeLeft < 60) {
+          document.getElementById("timer").style.color = "#e74c3c";
+        }
+      }
+
+      function loadQuestion() {
+        const question = currentQuestions[currentIndex];
+        document.getElementById("questionText").textContent = question.q;
+        document.getElementById("progressText").textContent =
+          `Question ${currentIndex + 1} of ${currentQuestions.length}`;
+
+        const optionsContainer = document.getElementById("optionsContainer");
+        optionsContainer.innerHTML = "";
+
+        question.options.forEach((option, idx) => {
+          const optionDiv = document.createElement("div");
+          optionDiv.className = "option";
+
+          const radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = "question";
+          radio.value = idx;
+          radio.id = `option${idx}`;
+          radio.checked = userAnswers[currentIndex] === idx;
+
+          radio.addEventListener("change", () => {
+            userAnswers[currentIndex] = parseInt(radio.value);
+            updateButtons();
+          });
+
+          const label = document.createElement("label");
+          label.htmlFor = `option${idx}`;
+          label.textContent = option;
+
+          optionDiv.appendChild(radio);
+          optionDiv.appendChild(label);
+          optionsContainer.appendChild(optionDiv);
+        });
+
+        // Update button states
+        updateButtons();
+      }
+
+      function updateButtons() {
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const submitBtn = document.getElementById("submitBtn");
+
+        prevBtn.disabled = currentIndex === 0;
+        prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+
+        // Check if current question is answered
+        const isAnswered = userAnswers[currentIndex] !== null;
+
+        if (currentIndex === currentQuestions.length - 1) {
+          nextBtn.classList.add("hidden");
+          submitBtn.classList.remove("hidden");
+          submitBtn.disabled = !isAnswered;
+          submitBtn.style.opacity = isAnswered ? "1" : "0.5";
+        } else {
+          nextBtn.classList.remove("hidden");
+          submitBtn.classList.add("hidden");
+          nextBtn.disabled = !isAnswered;
+          nextBtn.style.opacity = isAnswered ? "1" : "0.5";
+        }
+      }
+
+      function nextQuestion() {
+        if (
+          currentIndex < currentQuestions.length - 1 &&
+          userAnswers[currentIndex] !== null
+        ) {
+          currentIndex++;
+          loadQuestion();
+          updateButtons();
+        }
+      }
+
+      function prevQuestion() {
+        if (currentIndex > 0) {
+          currentIndex--;
+          loadQuestion();
+          updateButtons();
+        }
+      }
+
+      function submitQuiz() {
+        clearInterval(timerInterval);
+
+        // Calculate score
+        let correctCount = 0;
+        const results = [];
+
+        currentQuestions.forEach((question, idx) => {
+          const userAnswer = userAnswers[idx];
+          const isCorrect = userAnswer === question.answer;
+          if (isCorrect) correctCount++;
+
+          results.push({
+            question: question.q,
+            options: question.options,
+            correctAnswer: question.answer,
+            userAnswer: userAnswer,
+            isCorrect: isCorrect,
+            explanation: question.explanation,
+          });
+        });
+
+        // Display results
+        document.getElementById("quizArea").style.display = "none";
+        document.getElementById("resultsArea").style.display = "block";
+
+        // Show final score
+        document.getElementById("finalScore").textContent =
+          `${correctCount}/${currentQuestions.length}`;
+
+        // Feedback based on score
+        const feedback = document.getElementById("overallFeedback");
+        const percentage = (correctCount / currentQuestions.length) * 100;
+
+        if (percentage === 100) {
+          feedback.textContent =
+            " Perfect Score! Excellent understanding of saving and investment concepts!";
+          feedback.style.color = "#2ecc71";
+        } else if (percentage >= 80) {
+          feedback.textContent =
+            " Great job! You have a solid grasp of the material.";
+          feedback.style.color = "#2ecc71";
+        } else if (percentage >= 60) {
+          feedback.textContent =
+            " Good effort! Review the explanations below to strengthen your understanding.";
+          feedback.style.color = "#f39c12";
+        } else {
+          feedback.textContent =
+            " Keep learning! Review the lessons and try again.";
+          feedback.style.color = "#e74c3c";
+        }
+
+        // Display review of all questions
+        const reviewContainer = document.getElementById("reviewContainer");
+        reviewContainer.innerHTML = "";
+
+        results.forEach((result, idx) => {
+          const reviewCard = document.createElement("div");
+          reviewCard.className = "review-card";
+          reviewCard.style.borderLeft = `4px solid ${result.isCorrect ? "#2ecc71" : "#e74c3c"}`;
+          reviewCard.style.marginBottom = "20px";
+          reviewCard.style.padding = "15px";
+          reviewCard.style.backgroundColor = "#f8f9fa";
+          reviewCard.style.borderRadius = "8px";
+
+          const questionHeader = document.createElement("h4");
+          questionHeader.textContent = `Question ${idx + 1}: ${result.question}`;
+          questionHeader.style.marginBottom = "10px";
+          reviewCard.appendChild(questionHeader);
+
+          const answerDisplay = document.createElement("p");
+          const userAnsText =
+            result.userAnswer !== null
+              ? result.options[result.userAnswer]
+              : "Not answered";
+          const correctAnsText = result.options[result.correctAnswer];
+          answerDisplay.innerHTML = `
+          <strong>Your answer:</strong> {userAnsText} ${result.isCorrect ? "?" : "?"}<br>
+          <strong>Correct answer:</strong> {correctAnsText}<br>
+          <strong>Explanation:</strong> {result.explanation}
+        `;
+          answerDisplay.style.margin = "5px 0";
+          reviewCard.appendChild(answerDisplay);
+
+          reviewContainer.appendChild(reviewCard);
+        });
+
+        // Scroll to results
+        document
+          .getElementById("resultsArea")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Initialize - hide quiz and results initially
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("quizArea").style.display = "none";
+        document.getElementById("resultsArea").style.display = "none";
+      });
+    </script>
+  </body>
+</html>

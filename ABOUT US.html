@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us · SeriSync</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="SERISYNC/ABOUT US.CSS" />
+    <link rel="stylesheet" href="SERISYNC/ALBY.CSS" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script>
+    // Activate Search Button
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-box input");
+      const searchButton = document.querySelector(".search-box button");
+
+      // Function that runs when user searches
+      function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+
+        if (query === "") {
+          alert("Please type something to search!");
+          searchInput.focus();
+          return;
+        }
+
+        // Simple keyword matching → redirects to the correct lesson
+        if (
+          query.includes("intro") ||
+          query.includes("introduction") ||
+          query.includes("sequence") ||
+          query.includes("series")
+        ) {
+          window.location.href = "LESSON 1.html";
+        } else if (
+          query.includes("saving") ||
+          query.includes("investment") ||
+          query.includes("finance") ||
+          query.includes("money")
+        ) {
+          window.location.href = "LESSON 2.html";
+        } else if (query.includes("population") || query.includes("growth")) {
+          window.location.href = "LESSON 3.html";
+        } else if (
+          query.includes("depreciation") ||
+          query.includes("depreciate") ||
+          query.includes("value")
+        ) {
+          window.location.href = "LESSON 4.html";
+        } else if (query.includes("quiz") || query.includes("test")) {
+          window.location.href = "QUIZZES.html";
+        } else if (query.includes("about") || query.includes("team")) {
+          window.location.href = "ABOUT US.html";
+        } else if (query.includes("contact")) {
+          window.location.href = "CONTACT US.html";
+        } else {
+          // If no match found
+          alert(
+            'No results found for: "' +
+              searchInput.value +
+              '"\n\nTry searching for: sequences, savings, population, depreciation, quiz...',
+          );
+          searchInput.focus();
+        }
+      }
+
+      // When the search button is clicked
+      searchButton.addEventListener("click", performSearch);
+
+      // When the user presses Enter key inside the input
+      searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          performSearch();
+        }
+      });
+    });
+  </script>
+  <body>
+    <!-- ========== NAVIGATION BAR ========== -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <div class="logo-text">Seri<span>Sync</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="LESSON PAGE.html">Lessons</a>
+          <div class="dropdown-content">
+            <a href="LESSON 1.html"
+              >Introduction to Real Life Application to Sequence and Series</a
+            >
+            <a href="LESSON 2.html">Saving and Investment Plans</a>
+            <a href="LESSON 3.html">Population Growth</a>
+            <a href="LESSON 4.html">Depreciation</a>
+          </div>
+        </li>
+        <li><a href="QUIZZES.html">Quizzes</a></li>
+        <li><a href="ABOUT US.html" class="active">About Us</a></li>
+        <li><a href="CONTACT US.html">Contacts</a></li>
+      </ul>
+
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Search lessons..."
+          aria-label="Search lessons"
+        />
+        <button type="button" aria-label="Search">🔍</button>
+      </div>
+    </nav>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+      <h1>About <span>Us</span></h1>
+      <p>
+        We are five passionate individuals who believe that sequences &amp;
+        series are not just math — they are the rhythm of life.
+      </p>
+    </section>
+
+    <!-- ========== ABOUT CONTENT ========== -->
+    <div class="about-container">
+      <!-- GROUP PICTURE + MISSION -->
+      <div class="group-header">
+        <div class="group-picture">
+          <img
+            src="GROUP.png"
+            height="120"
+            width="120"
+            alt="SeriSync team working together"
+            onerror="
+              this.style.display = 'none';
+              this.nextElementSibling.style.display = 'flex';
+            "
+          />
+          <div class="picture-fallback" style="display: none">
+            ⚡ SeriSync<br />Team 2026
+          </div>
+        </div>
+
+        <div class="group-text">
+          <h2>Our <span>Mission</span></h2>
+          <p class="mission-text">
+            We make mathematics tangible — showing how sequences and series
+            shape finance, nature, technology, and everyday decisions.
+          </p>
+
+          <div class="goal-vision">
+            <div>
+              <h4>🎯 Goal</h4>
+              <p>
+                To empower learners with practical knowledge of sequences &amp;
+                series through real-world case studies and interactive lessons.
+              </p>
+            </div>
+            <div>
+              <h4>🔭 Vision</h4>
+              <p>
+                To become the leading platform where math meets life — inspiring
+                curiosity and confidence in every student.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEAM MEMBERS -->
+      <h2 class="team-heading">Meet the <span>Team</span></h2>
+
+      <div class="team-grid">
+        <!-- 1. Mark Dorkenoo -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="MARK.png" height="120" width="120" alt="Mark Dorkenoo" />
+          </div>
+          <h3>Mark Dorkenoo</h3>
+          <span class="member-role">Project Lead</span>
+          <div class="member-details">
+            <p><strong>Index:</strong> 5240110244</p>
+            <p><strong>Phone:</strong> +233 257697135</p>
+            <p><strong>Email:</strong> mark@serisync.edu</p>
+          </div>
+        </div>
+
+        <!-- 2. Alberta Brakatu-Acquah -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img
+              src="ALBY.png"
+              height="120"
+              width="120"
+              alt="Alberta Brakatu-Acquah"
+            />
+          </div>
+          <h3>Alberta Brakatu-Acquah</h3>
+          <span class="member-role">Content Strategist</span>
+          <div class="member-details">
+            <p><strong>Index:</strong> 5240110249</p>
+            <p><strong>Phone:</strong> +233 242871363</p>
+            <p><strong>Email:</strong> alberta@serisync.edu</p>
+          </div>
+        </div>
+
+        <!-- 3. Seth Gbordjor -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="SETH.png" height="120" width="120" alt="Seth Gbordjor" />
+          </div>
+          <h3>Seth Gbordjor</h3>
+          <span class="member-role">UX &amp; Front-End</span>
+          <div class="member-details">
+            <p><strong>Index:</strong> 5240110197</p>
+            <p><strong>Phone:</strong> +233548968898</p>
+            <p><strong>Email:</strong> seth@serisync.edu</p>
+          </div>
+        </div>
+
+        <!-- 4. Korankye Ruben -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img
+              src="RUBEN.png"
+              height="120"
+              width="120"
+              alt="Korankye Ruben"
+            />
+          </div>
+          <h3>Korankye Ruben</h3>
+          <span class="member-role">Data &amp; Research</span>
+          <div class="member-details">
+            <p><strong>Index:</strong> 5240110148</p>
+            <p><strong>Phone:</strong> +233 550888133</p>
+            <p><strong>Email:</strong> ruben@serisync.edu</p>
+          </div>
+        </div>
+
+        <!-- 5. Francis Lewil -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="LEWIL.png" height="120" width="120" alt="Francis Lewil" />
+          </div>
+          <h3>Francis Lewil</h3>
+          <span class="member-role">Quality Assurance</span>
+          <div class="member-details">
+            <p><strong>Index:</strong> 5240110103</p>
+            <p><strong>Phone:</strong> +233 558451820</p>
+            <p><strong>Email:</strong> francis@serisync.edu</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <div class="footer-social">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Facebook"
+          >FB</a
+        >
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="X / Twitter"
+          >X</a
+        >
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Instagram"
+          >IG</a
+        >
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="YouTube"
+          >YT</a
+        >
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+          >IN</a
+        >
+      </div>
+      <p class="footer-text">
+        <strong>2026</strong> SeriSync. All rights reserved.<br />
+        Sequences &amp; Series made practical.
+      </p>
+    </footer>
+  </body>
+</html>
