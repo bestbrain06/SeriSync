@@ -15,73 +15,6 @@
       rel="stylesheet"
     />
   </head>
-  <script>
-    // Activate Search Button
-    document.addEventListener("DOMContentLoaded", function () {
-      const searchInput = document.querySelector(".search-box input");
-      const searchButton = document.querySelector(".search-box button");
-
-      // Function that runs when user searches
-      function performSearch() {
-        const query = searchInput.value.trim().toLowerCase();
-
-        if (query === "") {
-          alert("Please type something to search!");
-          searchInput.focus();
-          return;
-        }
-
-        // Simple keyword matching → redirects to the correct lesson
-        if (
-          query.includes("intro") ||
-          query.includes("introduction") ||
-          query.includes("sequence") ||
-          query.includes("series")
-        ) {
-          window.location.href = "LESSON 1.html";
-        } else if (
-          query.includes("saving") ||
-          query.includes("investment") ||
-          query.includes("finance") ||
-          query.includes("money")
-        ) {
-          window.location.href = "LESSON 2.html";
-        } else if (query.includes("population") || query.includes("growth")) {
-          window.location.href = "LESSON 3.html";
-        } else if (
-          query.includes("depreciation") ||
-          query.includes("depreciate") ||
-          query.includes("value")
-        ) {
-          window.location.href = "LESSON 4.html";
-        } else if (query.includes("quiz") || query.includes("test")) {
-          window.location.href = "QUIZZES.html";
-        } else if (query.includes("about") || query.includes("team")) {
-          window.location.href = "ABOUT US.html";
-        } else if (query.includes("contact")) {
-          window.location.href = "CONTACT US.html";
-        } else {
-          // If no match found
-          alert(
-            'No results found for: "' +
-              searchInput.value +
-              '"\n\nTry searching for: sequences, savings, population, depreciation, quiz...',
-          );
-          searchInput.focus();
-        }
-      }
-
-      // When the search button is clicked
-      searchButton.addEventListener("click", performSearch);
-
-      // When the user presses Enter key inside the input
-      searchInput.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-          performSearch();
-        }
-      });
-    });
-  </script>
   <body>
     <!-- ========== NAVIGATION BAR ========== -->
     <nav class="navbar">
@@ -303,5 +236,6 @@
         Sequences &amp; Series made practical.
       </p>
     </footer>
+    <script src="search.js"></script>
   </body>
 </html>
